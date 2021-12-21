@@ -1,0 +1,23 @@
+{
+  "name": "fbjs-bot-dzgc",
+  "version": "1.0.0",
+  "description": "FBJS-BOT-DZGC",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "${Mr.DJA}",
+  "license": "ISC",
+  "dependencies": {
+    "@makepad/fbjs": "https://www.github.com/iMrDJAi/fbjs/tarball/development",
+    "axios": "^0.24.0",
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0",
+    "puppeteer": "^9.1.1",
+    "puppeteer-extra": "^3.2.3",
+    "puppeteer-extra-plugin-stealth": "^2.9.0",
+    "turndown": "^7.1.1"
+  }
+}

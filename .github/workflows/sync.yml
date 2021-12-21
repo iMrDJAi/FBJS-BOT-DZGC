@@ -1,0 +1,26 @@
+name: Sync
+
+on:
+  schedule:
+    - cron:  '*/30 * * * *'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm i
+      - name: Start script
+        run: npm run start
+        env:
+          FB_COOKIES: ${{secrets.FB_COOKIES}}
+          FB_GROUP: ${{secrets.FB_GROUP}}
+          WEBHOOK_URLS: ${{secrets.WEBHOOK_URLS}}
+      - name: Save changes
+        uses: mikeal/publish-to-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH_NAME: 'main'
